@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .text-p-color {
+    @apply text-[#939F5C];
+  }
+
+  .text-s-color {
+    @apply text-[#639A88];
+  }
+
+  .text-t-color {
+    @apply text-[#313715];
+  }
+
+  .bg-p-color {
+    @apply bg-[#b2e24b];
+  }
+
+  .bg-s-color {
+    @apply bg-[#639A88];
+  }
+
+  .bg-t-color {
+    @apply bg-[#313715];
+  }
+}
