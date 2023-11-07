@@ -4,7 +4,7 @@ import Link from "next/link";
 import product from "@/sanity/schemas/product";
 
 async function getData() {
-  const query = `*[_type == "product" && category->name == "Men"][0...3] {
+  const query = `*[_type == "product" && category->name == "Women"][0...3] {
         _id,
         name,
         "imageUrl": images[0].asset->url,
@@ -18,24 +18,17 @@ async function getData() {
   return data;
 }
 
-export default async function MenCollection() {
+export default async function WomenCollection() {
   const data: menCollection[] = await getData();
   return (
-    <div className="my-2 max-w-5xl mx-auto">
+    <div className="mt-40 max-w-5xl mx-auto">
       <div className="flex items-center justify-center gap-x-3 px-2">
-        <Image
-          src="/blueshoes.webp"
-          alt="Shoe Image"
-          width={280}
-          height={200}
-          className="hidden sm:block object-contain object-center w-1/4 xl:w-2/4 mt-10"
-        />
         <div className="flex flex-col items-center gap-y-1">
           <h1 className="font-black  text-xl tracking-tighter uppercase text-p-color">
-            Men's Collection
+            Women's Collection
           </h1>
           <Link
-            href="/Men"
+            href="/Women"
             className="mb-2 font-extralight text-gray-500 underline text-sm"
           >
             Shop All Products
@@ -66,6 +59,13 @@ export default async function MenCollection() {
             ))}
           </div>
         </div>
+        <Image
+          src="/whiteshoes.jpg"
+          alt="Shoe Image"
+          width={280}
+          height={200}
+          className="hidden sm:block object-contain object-center w-1/4 xl:w-2/4 mt-10"
+        />
       </div>
     </div>
   );

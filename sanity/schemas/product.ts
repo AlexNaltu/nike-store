@@ -42,5 +42,10 @@ export default {
         },
       ],
     },
+    {
+      name: 'best',
+      title: 'Best Category',
+      type: 'string',
+    },
   ],
 }

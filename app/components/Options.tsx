@@ -7,9 +7,13 @@ export default function Options() {
       <div className="grid grid-cols-2 lg:grid-cols-4">
         {OptionsData.map((item, idx) => (
           <div key={idx} className="flex flex-col items-center max-w-xs p-4">
-            <Image src={item.icon} alt="photos" width={50} height={50} />
-            <h1 className="font-black text-xs lg:text-sm text-center">{item.title}</h1>
-            <p className="text-center text-[0.5rem] lg:text-xs font-extralight tracking-tighter">{item.description}</p>
+            <Image src={item.icon} alt="photos" width={35} height={50} />
+            <h1 className="font-black text-[0.6rem] lg:text-sm text-center">
+              {item.title}
+            </h1>
+            <p className="text-center text-[0.45rem] lg:text-xs font-extralight tracking-tighter">
+              {item.description}
+            </p>
           </div>
         ))}
       </div>
