@@ -2,6 +2,7 @@ import Image from "next/image";
 import { client } from "../lib/sanity";
 import Link from "next/link";
 import product from "@/sanity/schemas/product";
+import { simpleProduct } from "../interface";
 
 async function getData() {
   const query = `*[_type == "product" && category->name == "Men"][0...3] {
@@ -19,7 +20,7 @@ async function getData() {
 }
 
 export default async function MenCollection() {
-  const data: menCollection[] = await getData();
+  const data: simpleProduct[] = await getData();
   return (
     <div className="my-2 max-w-5xl mx-auto">
       <div className="flex items-center justify-center gap-x-3 px-2">
