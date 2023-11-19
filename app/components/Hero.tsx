@@ -5,10 +5,12 @@ import { usePathname } from "next/navigation";
 export default function Hero() {
   const pathname = usePathname();
 
-  if (pathname.startsWith("/Men")) return null;
-  if (pathname.startsWith("/Women")) return null;
-  if (pathname.startsWith("/Teens")) return null;
-  if (pathname.startsWith("/product")) return null;
+  if (
+    ["/Men", "/Women", "/Teens", "/product"].some((prefix) =>
+      pathname.startsWith(prefix)
+    )
+  )
+    return null;
 
   return (
     <div className="max-w-7xl flex items-center justify-center gap-3 md:gap-6 p-2 my-2 mx-auto">
